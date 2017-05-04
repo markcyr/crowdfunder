@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true, on: :create
   validates :password_confirmation, presence: true, on: :create
 
-  validates :email, uniqueness: true
+  # validates :email, uniqueness: true
 end
