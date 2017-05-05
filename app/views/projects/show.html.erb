@@ -9,7 +9,7 @@
   <%= image_tag @project.image %>
 <% end %>
 <!-- <h2><%= @current_user_id%></h2> -->
-<!-- <% if @current_user_id %> -->
+<% if @current_user_id != @project.user_id %>
 <h2>Rewards</h2>
 <% @project.rewards.each do |reward| %>
   <p><%= number_to_currency(reward.dollar_amount) %></p>
@@ -19,5 +19,5 @@
     <%= f.number_field :dollar_amount, value: reward.dollar_amount, step: 0.01 %>
     <%= f.submit "Pledge" %>
   <% end %>
-
+<%end%>
 <% end %>
